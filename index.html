@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <script src="https://kit.fontawesome.com/50d3f01cf7.js" crossorigin="anonymous"></script>
+    <title>Fyle</title>
+</head>
+<body>
+    <section id="form-section">
+        <form id="tax-calculator">
+            <h2>Tax Calculator</h2>
+            <div class="input-div">
+                <label for="gross-annual-income">
+                    Enter gross annual income 
+                    <div id="gai-info">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Total salary in a year before any deductions</p>
+                    </div>
+                </label>
+                <div class="error-div" id="gai-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Please enter numbers greater than 0 only</p>
+                </div>
+                <input type="text" id="gross-annual-income"  name="gross-annual-income" required placeholder="Enter gross annual income" spellcheck="false" autocomplete="off" />
+            </div>
+            <div class="input-div">
+                <label for="extra-income">
+                    Enter extra income
+                    <div id="ei-info">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Money you earn in addition to your regular paycheck</p>
+                    </div>
+                </label>
+                <div class="error-div" id="ei-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Please enter numbers greater than 0 only</p>
+                </div>
+                <input type="text" id="extra-income" name="extra-income" required placeholder="Enter extra income with other sources" spellcheck="false" autocomplete="off" />
+            </div>
+            <div class="input-div">
+                <label for="age-group">
+                    Enter age group
+                    <div id="ag-info">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Age range you belong to</p>
+                    </div>
+                </label>
+                <div class="error-div" id="ag-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p>Please enter numbers greater than 0 only</p>
+                </div>
+                <select id="age-group" name="age-group" >
+                    <option disabled selected hidden></option>
+                    <option value="<40">< 40</option>
+                    <option value=">=40&<60">>= 40 & < 60</option>
+                    <option value=">=60">>= 60</option>
+                </select>
+            </div>
+            <div class="input-div">
+                <label for="total-appl-deduc">
+                    Enter total applicable deductions 
+                    <div id="tad-info">
+                        <i class="fa-solid fa-circle-question"></i>
+                        <p>Amount that can be reduced from the total taxable income</p>
+                    </div>
+                </label>
+                <div class="error-div" id="tad-error">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p></p>
+                </div>
+                <input type="text" id="total-appl-deduc" name="total-appl-deduc" required placeholder="Add total applicable deductions" spellcheck="false" autocomplete="off" />
+            </div>
+            <div class="input-div">
+                <input type="submit" id="submit-form" name="submit-form" value="Submit" />
+            </div>
+        </form>
+    </section>
+
+    <section id="modal">
+        <div id="modal-box">
+            <div>
+                Your overall income will be <p id="overall-income"></p><p>after tax deduction</p>
+                <input type="button" id="modal-close-button" value="close" />
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+</body>
+</html>
